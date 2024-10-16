@@ -1,17 +1,18 @@
+
 {
-  {
-    "name": "toys",
-    "version": "1.0.0",
-    "main": "index.js",
-    "scripts": {
+  "name": "toys",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
       "start": "node index.js"
-    },
-    "description": "",
-    "dependencies": {
+  },
+  "description": "",
+  "dependencies": {
       "express": "^4.21.1",
       "node-fetch": "^2.7.0",
-      "node-cron": "^3.0.0"  // Mantenha essa linha se for usar cron
-    }
+      "node-cron": "^3.0.0"
   }
+}
+
   
 
