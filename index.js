@@ -41,7 +41,7 @@ app.post('/test', async (req, res) => {
 
         const resposta_json = await resposta.json();
         console.log(resposta_json);
-        res.send("OK");
+        res.json(resposta_json); // Retorne a resposta JSON
     } catch (error) {
         console.error("Erro:", error);
         res.status(500).send("Erro ao processar a requisição");
@@ -71,7 +71,7 @@ app.post('/getAcessToken', async (req, res) => {
 
         const resposta_json = await resposta.json();
         console.log(resposta_json);
-        res.send("OK");
+        res.json(resposta_json); // Retorne a resposta JSON
     } catch (error) {
         console.error("Erro:", error);
         res.status(500).send("Erro ao processar a requisição");
@@ -83,4 +83,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Servidor ativo na porta ${PORT} - http://localhost:${PORT}`);
 });
+
 

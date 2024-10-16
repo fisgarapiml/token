@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "description": "",
   "devDependencies": {
@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "express": "^4.21.1",
-    "node-fetch": "^2.7.0"
+    "node-fetch": "^2.7.0",
+    "node-cron": "^3.0.0"  // Se você for usar cron para agendar o refresh do token
   }
 }
+
