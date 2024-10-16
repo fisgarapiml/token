@@ -1,3 +1,4 @@
+
 // index.js
 
 const express = require('express');
@@ -5,12 +6,16 @@ const app = express();
 const path = require('path');
 const fetch = require('node-fetch');
 
-
 // Middleware para analisar o corpo das requisições
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Rota de teste simples
+app.get('/testConnection', (req, res) => {
+    res.send('Conexão bem-sucedida!');
+});
 
 // Rota /test
 app.post('/test', async (req, res) => {
@@ -36,7 +41,7 @@ app.post('/test', async (req, res) => {
     const resposta_json = await resposta.json();
     console.log(resposta_json);
     res.send("OK"); 
-}); // Fechamento adicionado aqui
+}); 
 
 // Rota /getAcessToken
 app.post('/getAcessToken', async (req, res) => {
@@ -63,9 +68,10 @@ app.post('/getAcessToken', async (req, res) => {
     res.send("OK");
 });
 
-
 // Porta onde o servidor será executado
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Servidor ativo na porta ${PORT} - http://localhost:${PORT}`);
 });
+
+
