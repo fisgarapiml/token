@@ -32,15 +32,20 @@ app.post('/test', async (req, res) => {
     
     const dados = `grant_type=authorization_code&client_id=${app_id}&client_secret=${client_secret}&code=${code}&redirect_uri=${redirect_uri}`;
 
-    const resposta = await fetch(url_principal, {
-        method: 'POST',
-        headers: headers,
-        body: dados
-    });
+    try {
+        const resposta = await fetch(url_principal, {
+            method: 'POST',
+            headers: headers,
+            body: dados
+        });
 
-    const resposta_json = await resposta.json();
-    console.log(resposta_json);
-    res.send("OK"); 
+        const resposta_json = await resposta.json();
+        console.log(resposta_json);
+        res.send("OK");
+    } catch (error) {
+        console.error("Erro:", error);
+        res.status(500).send("Erro ao processar a requisição");
+    }
 }); 
 
 // Rota /getAcessToken
@@ -57,15 +62,20 @@ app.post('/getAcessToken', async (req, res) => {
     
     const dados = `grant_type=refresh_token&client_id=${app_id}&client_secret=${client_secret}&refresh_token=${refresh_token}`;
 
-    const resposta = await fetch(url_principal, {
-        method: 'POST',
-        headers: headers,
-        body: dados
-    });
+    try {
+        const resposta = await fetch(url_principal, {
+            method: 'POST',
+            headers: headers,
+            body: dados
+        });
 
-    const resposta_json = await resposta.json();
-    console.log(resposta_json);
-    res.send("OK");
+        const resposta_json = await resposta.json();
+        console.log(resposta_json);
+        res.send("OK");
+    } catch (error) {
+        console.error("Erro:", error);
+        res.status(500).send("Erro ao processar a requisição");
+    }
 });
 
 // Porta onde o servidor será executado
@@ -73,5 +83,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Servidor ativo na porta ${PORT} - http://localhost:${PORT}`);
 });
-
 
