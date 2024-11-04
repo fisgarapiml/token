@@ -1,15 +1,24 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "index.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "index.js"
-      }
-    ]
-  }
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/refreshAccessToken",
+      "dest": "index.js"
+    },
+    {
+      "src": "/currentAccessToken",
+      "dest": "index.js"
+    },
+    {
+      "src": "/testConnection",
+      "dest": "index.js"
+    }
+  ]
+}
+

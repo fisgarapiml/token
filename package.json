@@ -1,18 +1,19 @@
-
 {
   "name": "toys",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-      "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js" // Para uso local
   },
   "description": "",
   "dependencies": {
-      "express": "^4.21.1",
-      "node-fetch": "^2.7.0",
-      "node-cron": "^3.0.0"
+    "express": "^4.21.1",
+    "node-fetch": "^2.7.0",
+    "node-cron": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
-
-  
 
