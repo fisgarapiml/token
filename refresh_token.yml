@@ -3,6 +3,7 @@ name: Refresh Access Token
 on:
   schedule:
     - cron: '0 */6 * * *'  # A cada 6 horas
+  workflow_dispatch:  # Permite execução manual
 
 jobs:
   refresh_token:
