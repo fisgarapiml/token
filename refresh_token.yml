@@ -10,4 +10,5 @@ jobs:
     steps:
       - name: Call API to refresh access token
         run: |
-          curl -X POST https://sua-api-na-vercel.vercel.app/refreshAccessToken
+          curl -X POST https://token-blond-mu.vercel.app/refreshAccessToken
+
