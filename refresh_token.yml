@@ -1,0 +1,13 @@
+name: Refresh Access Token
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # A cada 6 horas
+
+jobs:
+  refresh_token:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call API to refresh access token
+        run: |
+          curl -X POST https://sua-api-na-vercel.vercel.app/refreshAccessToken
