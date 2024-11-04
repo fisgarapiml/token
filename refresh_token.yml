@@ -1,0 +1,16 @@
+name: Refresh Access Token
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # A cada 6 horas
+  workflow_dispatch:  # Permite execução manual
+
+jobs:
+  refresh_token:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call API to refresh access token
+        run: |
+          curl -X POST https://token-blond-mu.vercel.app/refreshAccessToken
+
+
